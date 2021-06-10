@@ -27,7 +27,7 @@ const ClockFace = () => {
 
             setDate(newDate)
             count(getMsToNextMinute(newDate), newDate)
-          }, delay + 1000)
+          }, delay)
         )
       }
       const now = new Date()
