@@ -12,9 +12,12 @@ const ClockFace = () => {
   const hourFlipper = useRef<FlipperHandle>(null)
   const minutesFlipper = useRef<FlipperHandle>(null)
 
+  const getMsToNextMinute = (now: Date) =>
+    (intervalToDuration({ start: now, end: endOfMinute(now) }).seconds || 0) * 1000
+
   useEffect(() => {
     if (!timer && cardHeight !== 0) {
-      const count = (delay: number) => {
+      const count = (delay: number, date: Date) => {
         setTimer(
           setTimeout(() => {
             const newDate = new Date()
@@ -24,13 +27,13 @@ const ClockFace = () => {
             newDate.getMinutes() !== date.getMinutes() && minutesFlipper.current?.flip()
 
             setDate(newDate)
-            count(60 * 1000)
-          }, delay)
+            count(getMsToNextMinute(newDate), newDate)
+          }, delay + 1000)
         )
       }
       const now = new Date()
-      const msToNextminute = (intervalToDuration({ start: now, end: endOfMinute(now) }).seconds || 0) * 1000
-      count(msToNextminute)
+      const msToNextMinute = getMsToNextMinute(now)
+      count(msToNextMinute, now)
     }
     // hourFlipper.current?.flip()
     // minutesFlipper.current?.flip()
