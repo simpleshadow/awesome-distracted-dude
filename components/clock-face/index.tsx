@@ -18,18 +18,18 @@ const ClockFace = () => {
         setTimer(
           setTimeout(() => {
             const newDate = new Date()
+            console.log('count', newDate, date)
 
             newDate.getHours() !== date.getHours() && hourFlipper.current?.flip()
             newDate.getMinutes() !== date.getMinutes() && minutesFlipper.current?.flip()
 
             setDate(newDate)
             count(60 * 1000)
-          }, delay + 10)
+          }, delay)
         )
       }
       const now = new Date()
-      const msToNextminute =
-        ((intervalToDuration({ start: now, end: endOfMinute(now) }).seconds || 0) + 1) * 1000
+      const msToNextminute = (intervalToDuration({ start: now, end: endOfMinute(now) }).seconds || 0) * 1000
       count(msToNextminute)
     }
     // hourFlipper.current?.flip()
