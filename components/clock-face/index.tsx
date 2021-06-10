@@ -18,9 +18,10 @@ const ClockFace = () => {
         setTimer(
           setTimeout(() => {
             const newDate = new Date()
+
             newDate.getHours() !== date.getHours() && hourFlipper.current?.flip()
             newDate.getMinutes() !== date.getMinutes() && minutesFlipper.current?.flip()
-            console.log('here', date, newDate)
+
             setDate(newDate)
             count(60 * 1000)
           }, delay + 10)
