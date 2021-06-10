@@ -1,0 +1,51 @@
+{
+  "name": "awesome-distracted-dude",
+  "version": "0.1.0",
+  "scripts": {
+    "postinstall": "npx patch-package",
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "next dev",
+    "eject": "expo eject",
+    "build": "next build"
+  },
+  "private": true,
+  "dependencies": {
+    "@motify/skeleton": "^0.11.0",
+    "@react-navigation/native": "^5.9.0",
+    "date-fns": "^2.22.1",
+    "dripsy": "^2.2.0",
+    "expo": "^41.0.1",
+    "expo-linear-gradient": "^9.1.0",
+    "install": "^0.13.0",
+    "moti": "^0.11.0",
+    "next": "^10.2.3",
+    "patch-package": "^6.4.7",
+    "raf": "^3.4.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-native": "^0.64.2",
+    "react-native-anchor-point": "^1.0.3",
+    "react-native-reanimated": "^2.2.0",
+    "react-native-web": "^0.16.3",
+    "tailwind-rn": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@expo/next-adapter": "^2.1.77",
+    "@types/react": "^17.0.9",
+    "@types/react-native": "^0.64.10",
+    "@types/react-native-web": "npm:@types/react-native",
+    "next-compose-plugins": "^2.2.1",
+    "next-transpile-modules": "^7.2.0",
+    "postcss": "^8.3.0",
+    "tailwindcss": "^2.1.4",
+    "typescript": "^4.3.2",
+    "webpack": "^5.38.1"
+  },
+  "resolutions": {
+    "html-webpack-plugin": "5.3.0"
+  }
+}
