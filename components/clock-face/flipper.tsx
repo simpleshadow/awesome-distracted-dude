@@ -75,10 +75,10 @@ const Flipper = forwardRef<FlipperHandle, FlipperProps>(
 
     let prevDigits: string, AMPM: string | undefined
     if (type === 'hour') {
-      prevDigits = date.getHours() === 12 ? '1' : format(sub(date, { hours: 1 }), 'h')
+      prevDigits = format(sub(date, { hours: 1 }), 'h')
       AMPM = format(date, 'bb')
     } else {
-      prevDigits = date.getMinutes() === 59 ? '00' : format(sub(date, { minutes: 1 }), 'mm')
+      prevDigits = format(sub(date, { minutes: 1 }), 'mm')
     }
 
     return (
