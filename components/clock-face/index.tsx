@@ -21,7 +21,6 @@ const ClockFace = () => {
         setTimer(
           setTimeout(() => {
             const newDate = new Date()
-            console.log('count', newDate, date)
 
             newDate.getHours() !== date.getHours() && hourFlipper.current?.flip()
             newDate.getMinutes() !== date.getMinutes() && minutesFlipper.current?.flip()
