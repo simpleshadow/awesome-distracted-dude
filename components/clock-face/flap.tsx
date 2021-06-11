@@ -64,7 +64,7 @@ const Flap = <V extends { unflipped: any; flipped: any } & Variants<V>>({
       }}
     >
       {isHour && AMPM && type === 'top' && (
-        <TWText className={`absolute text-white font-black text-2xl`} style={{ top: 32, left: 32 }}>
+        <TWText className={`absolute text-white font-black text-2xl lowercase`} style={{ top: 32, left: 32 }}>
           {AMPM}
         </TWText>
       )}
